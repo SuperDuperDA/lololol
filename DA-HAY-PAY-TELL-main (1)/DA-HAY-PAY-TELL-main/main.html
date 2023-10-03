@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Walter White chases you</title>
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+</head>
+<body>
+    <a-scene inspector-plugin-recast>
+
+        <a-assets>
+            <a-asset-item src = "piccadilly_circus_london_uk/scene.gltf" id = "London"></a-asset-item>
+            <a-asset-item src = "lowpoly_ak47/scene.gltf" id = "Gun"></a-asset-item>
+            <a-asset-item src = "stylished_heisenberg_from_breaking_bad/scene.gltf" id = "Walter" ></a-asset-item>
+
+        </a-assets>
+
+        <a-entity id="camera" camera position="-2.216 1 0.125" look-controls="pointerLockEnabled: true">
+            <a-entity id="weapon" gltf-model="#Gun" 
+              position="0 -4.4 3" rotation="0 180 0" scale="0.01 0.01 0.01"
+              body="type: static; mass: 5; shape: none;" 
+              shape="shape: sphere; radius: 5; offset: 0 3 0;"
+              player-movement>
+            </a-entity>
+            <a-cursor></a-cursor>
+
+        <a-sky color = "lightblue" radius = "3000"></a-sky>
+
+        <a-entity position = "0 0 0" gltf-model = "#London" >
+
+        <a-entity position = "-2.289 0.147 7.438" gltf-model = "#Walter" scale="0.2 0.2 0.2" rotation="0 180 0">
+
+            <a-entity position = "-0.25 0.9 0.1" gltf-model = "#Gun" scale="0.01 0.01 0.01"rotation="0 180 0">
+            </a-entity>
+
+        </a-entity>
+
+        </a-entity>
+        
+    </a-scene>-2.216 0.5 0.125
+</body>
+</html>
